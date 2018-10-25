@@ -5,7 +5,7 @@ require('electron-reload')('app');
 let win
 
 function createWindow(){
-  win = new BrowserWindow({ width: 800, height: 600 })
+  win = new BrowserWindow({frame: false, width: 800, height: 600 })
   win.loadFile('app/index.html')
   win.on('closed', () => {
     win = null
