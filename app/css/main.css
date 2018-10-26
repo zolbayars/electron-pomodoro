@@ -28,3 +28,10 @@ body {
 #timer-container {
   font-size: 10vw;
 }
+
+#start-btn {
+  cursor: pointer;
+  display: block;
+  margin-top: 5%;
+  font-size: 3vw;
+}
