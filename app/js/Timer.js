@@ -1,22 +1,42 @@
 'use strict';
 
+function modMinute(minute, seconds){
+  if(minute > 10){
+    return minute - 1;
+  }else{
+    return 0 + "" + (minute - 1);
+  }
+}
+
+function modSeconds(seconds){
+  if(seconds > 10){
+    return seconds - 1;
+  }else{
+    return 0 + "" + (seconds - 1);
+  }
+}
+
 class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      minutes: 25,
-      seconds: 0
+      minutes: '25',
+      seconds: '00'
     };
   }
 
   tick() {
+
+    if()
+
     this.setState(state => ({
-      seconds: state.seconds + 1
+      minutes: modMinute(state.minutes);
+      seconds: modSeconds(state.seconds);
     }));
   }
 
   componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 1000);
+    // this.interval = setInterval(() => this.tick(), 1000);
   }
 
   componentWillUnmount() {
@@ -27,8 +47,8 @@ class Timer extends React.Component {
     return React.createElement(
       "div",
       null,
-      "Seconds: ",
-      this.state.seconds
+
+      this.state.minutes + ":" + this.state.seconds
     );
   }
 }
